@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Batch - Smart Card System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header-strip">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="../assets/images/logo.png" alt="PS QuickIT Logo" class="logo-img">
+                <div class="system-name">| Smart Card System</div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <div class="user-details">
+                        <span>Operator: Admin</span>
+                        <span class="user-unit">Unit: HQ Delhi</span>
+                    </div>
+                </div>
+                <a href="../Login-Page/index.html" class="logout-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <div class="page-header-row">
+            <button class="btn-back" onclick="window.location.href='../Dashboard/index.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back
+            </button>
+            <h1>Create New Batch</h1>
+        </div>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h3>Batch Details</h3>
+            </div>
+
+            <form id="createBatchForm" novalidate>
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Batch Number <span class="required">*</span></label>
+                        <input type="text" id="batchInput" class="form-control" placeholder="e.g. B-2023-001" required>
+                        <div class="invalid-feedback">
+                            Format must be B-YYYY-XXX (e.g., B-2023-001)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location / Unit <span class="required">*</span></label>
+                        <input type="text" class="form-control" value="HQ Delhi" readonly
+                            style="background-color: #f9f9f9;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transaction Reference <span class="required">*</span></label>
+                        <input type="text" id="txnInput" class="form-control" placeholder="e.g. TXN-998877" required>
+                        <div class="invalid-feedback">
+                            Format must be TXN-XXXXXX (e.g., TXN-123456)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount (₹) <span class="required">*</span></label>
+                        <input type="number" id="amountInput" class="form-control" placeholder="0.00" min="0"
+                            step="0.01" required>
+                        <div class="invalid-feedback">
+                            Amount must be greater than 0.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Number of Cards <span class="required">*</span></label>
+                        <input type="number" id="cardsInput" class="form-control" placeholder="0" min="1" required>
+                        <div class="invalid-feedback">
+                            Number of cards cannot be negative or zero.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="text" id="dateField" class="form-control" readonly
+                            style="background-color: #eee; cursor: not-allowed;">
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel"
+                        onclick="window.location.href='../Dashboard/index.html'">Cancel</button>
+                    <button type="submit" class="btn-submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                        Create Batch
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

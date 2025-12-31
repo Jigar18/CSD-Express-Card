@@ -30,12 +30,9 @@ loginForm.addEventListener('submit', function(event) {
         isValid = false;
     }
 
-    // 4. Final Result
+    /// 4. Final Result
     if (isValid) {
-        // Later, this is where we will send data to the server
-        alert("Validation Successful! Logging in...");
         
-        // Simulating a redirect (Optional)
-        // window.location.href = "../dashboard/index.html"; 
+        window.location.href = "../Dashboard/index.html"; 
     }
 });
