@@ -1,0 +1,84 @@
+/* 1. Main Layout */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* 2. The Left Blue Panel */
+#login-left {
+    background: linear-gradient(135deg, #1fa2c4 0%, #167a98 100%);
+    position: relative;
+    overflow: hidden;
+    /* Ensure it fills height if content is small */
+    min-height: 100vh; 
+}
+
+/* The Curved Effect (Optional - keeping it subtle) */
+#login-left::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 200%;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100%;
+    transform: rotate(-10deg);
+    pointer-events: none;
+}
+
+/* 3. The Logo Styling */
+.logo-box {
+    /* This creates the whitespace "border" around the logo */
+    padding: 20px 40px; 
+    border-radius: 15px !important;
+}
+
+#login-left img {
+    width: 100%;
+    max-width: 220px; /* INCREASED SIZE */
+    height: auto;
+    display: block;
+}
+
+/* 4. Form Styling - UPDATED */
+.login-card {
+    border: none;
+    /* This creates the Blue Line on top */
+    border-top: 5px solid #167a98; 
+    
+    /* This creates the smooth Rounded Corners */
+    border-radius: 12px; 
+    
+    /* Soft shadow to lift it off the page */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    background-color: #fff;
+}
+
+/* Optional: Make the inputs look cleaner inside this new card */
+.form-control {
+    padding: 12px 15px;
+    border-radius: 6px; /* Slightly rounder inputs to match the card */
+    border: 1px solid #e0e0e0;
+    background-color: #fcfcfc;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: #167a98;
+    box-shadow: 0 0 0 3px rgba(22, 122, 152, 0.1);
+    background-color: #fff;
+}
+
+/* Button Styling matches the blue line */
+.btn {
+    border-radius: 6px;
+    background-color: #167a98;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #125b73;
+}
