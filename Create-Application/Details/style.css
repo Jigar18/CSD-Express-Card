@@ -1,4 +1,4 @@
-/* Base Styles & Reset */
+
 :root {
     --header-bg: #0e6b8a;
     --main-bg: #f4f6f9;
@@ -16,7 +16,7 @@
     --table-head-bg: #f8f9fa;
     --error-red: #ef4444;
     --border-color: #e2e8f0;
-    --btn-blue: #0284c7; /* New deeper blue for button */
+    --btn-blue: #0284c7;
 }
 
 * {
@@ -29,11 +29,11 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--main-bg);
     color: var(--text-dark);
-    /* SCALING FIX: Reduced from 17px to 15px */
+    
     font-size: 15px; 
 }
 
-/* --- HEADER STYLES --- */
+
 .main-header-strip {
     background-color: var(--header-bg);
     width: 100%;
@@ -41,7 +41,7 @@ body {
 .header-container {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0.6rem 1.5rem; /* Reduced padding slightly */
+    padding: 0.6rem 1.5rem; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,14 +79,14 @@ body {
     cursor: pointer;
 }
 
-/* --- MAIN LAYOUT --- */
+
 .main-content {
     padding: 2rem 2rem;
     max-width: 1300px;
     margin: 0 auto;
 }
 
-/* --- DASHBOARD SPECIFIC (Kept compact) --- */
+
 .dashboard-title-section { margin-bottom: 1.5rem; }
 .dashboard-title-section h1 { font-size: 1.5rem; margin-bottom: 0.3rem; }
 .dashboard-title-section p { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
@@ -107,7 +107,7 @@ body {
 .card-body h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 .card-body p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.4; font-weight: 400; }
 
-/* Table Styles */
+
 .table-section { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
 .section-header h3 { font-size: 1.1rem; }
@@ -128,22 +128,15 @@ body {
 .data-table tbody tr:hover { background-color: var(--text-muted); color: white; cursor: pointer; transition: background-color 0.2s ease; }
 
 
-/* ---------------------------------------------------- */
-/* --- NEW APPLICATION FORM STYLES --- */
-/* ---------------------------------------------------- */
-
-/* Navigation Header */
-/* Navigation Header */
 .app-header-nav {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
-    /* ALIGNMENT FIX: Match the width/margin of the stepper & form */
     max-width: 850px; 
     margin-left: auto;
     margin-right: auto;
-    padding: 0 10px; /* Matches padding of stepper-container */
+    padding: 0 10px; 
 }
 .back-btn {
     background: white;
@@ -164,12 +157,12 @@ body {
     font-weight: 700;
 }
 
-/* STEPPER FIX: Removed lines, spread evenly */
+
 .stepper-container {
     display: flex;
-    justify-content: space-between; /* Spreads items evenly across width */
+    justify-content: space-between; 
     margin-bottom: 2.5rem;
-    max-width: 850px; /* Matches form card width */
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 10px;
@@ -183,7 +176,7 @@ body {
     cursor: default;
 }
 .step-item::after {
-    display: none; /* REMOVED CONNECTING LINE */
+    display: none; 
 }
 
 .step-circle {
@@ -206,7 +199,7 @@ body {
     font-weight: 500;
 }
 
-/* Active Step */
+
 .step-item.active .step-circle {
     background-color: var(--card-teal);
     color: white;
@@ -216,20 +209,20 @@ body {
     font-weight: 700;
 }
 
-/* Form Layout & Header Fix */
+
 .form-card {
     background: white;
-    /* REMOVED default padding to allow header bar to be flush */
+    
     padding: 0; 
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     max-width: 850px;
     margin: 0 auto;
-    overflow: hidden; /* Ensures header bar stays inside rounded corners */
+    overflow: hidden; 
 }
 
 .form-header-bar {
-    background-color: #f8f9fa; /* Off-white background */
+    background-color: #f8f9fa; 
     padding: 1.2rem 2rem;
     border-bottom: 1px solid #f1f5f9;
 }
@@ -283,7 +276,7 @@ body {
 }
 .form-group input::placeholder { color: #cbd5e0; }
 
-/* Validation Styling */
+
 .error-msg {
     color: var(--error-red);
     font-size: 0.75rem;
@@ -299,14 +292,14 @@ body {
 .form-group.error .error-msg { display: block; }
 .form-group.error label { color: var(--error-red); }
 
-/* Footer Button */
+
 .form-footer {
     margin-top: 2.5rem;
     display: flex;
     justify-content: flex-end;
 }
 .btn-next {
-    background-color: var(--btn-blue); /* New Blue Color */
+    background-color: var(--btn-blue); 
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -320,5 +313,5 @@ body {
     transition: background-color 0.2s;
 }
 .btn-next:hover {
-    background-color: #0369a1; /* Darker shade on hover */
+    background-color: #0369a1; 
 }

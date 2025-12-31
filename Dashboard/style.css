@@ -1,9 +1,9 @@
-/* Base Styles & Reset */
+
 :root {
     --header-bg: #0e6b8a;
     --main-bg: #f4f6f9;
     --card-teal: #1396b0;
-    --card-dark-blue: #0b5e78; /* Darker blue for first card */
+    --card-dark-blue: #0b5e78; 
     --text-dark: #333;
     --text-muted: #7e8e9f;
     --link-blue: #1396b0;
@@ -13,7 +13,7 @@
     --info-text: #084298;
     --warning-bg: #fff3cd;
     --warning-text: #664d03;
-    --table-head-bg: #f8f9fa; /* Off-white for table header */
+    --table-head-bg: #f8f9fa; 
 }
 
 * {
@@ -26,18 +26,18 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--main-bg);
     color: var(--text-dark);
-    /* SCALING: Increased base font size */
+    
     font-size: 17px; 
 }
 
-/* Header/Navbar */
+
 .main-header-strip {
     background-color: var(--header-bg);
     width: 100%;
 }
 
 .header-container {
-    /* Alignment fix: Center the content matching main content width */
+    
     max-width: 1300px;
     margin: 0 auto;
     padding: 0.8rem 1.5rem;
@@ -94,7 +94,7 @@ body {
     cursor: pointer;
 }
 
-/* Main Content Layout */
+
 .main-content {
     padding: 2.5rem 2rem;
     max-width: 1300px;
@@ -111,10 +111,10 @@ body {
 .dashboard-title-section p {
     color: var(--text-muted);
     font-size: 1rem;
-    font-weight: 500; /* Increased font weight */
+    font-weight: 500; 
 }
 
-/* Action Cards */
+
 .cards-container {
     display: flex;
     gap: 1.8rem;
@@ -125,7 +125,7 @@ body {
     flex: 1;
     background: white;
     border-radius: 8px;
-    /* SHADOW EFFECT: Added stronger shadow */
+    
     box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
     overflow: hidden;
     cursor: pointer;
@@ -137,7 +137,7 @@ body {
 }
 
 .card-banner {
-    /* Default banner color */
+    
     background-color: var(--card-teal);
     padding: 1.4rem;
     display: flex;
@@ -146,7 +146,7 @@ body {
     color: white;
 }
 
-/* First Card Specific Color */
+
 .action-card:nth-child(1) .card-banner {
     background-color: var(--card-dark-blue);
 }
@@ -165,15 +165,15 @@ body {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.5;
-    font-weight: 500; /* Increased font weight */
+    font-weight: 500; 
 }
 
-/* Recent Batches Table Section */
+
 .table-section {
     background: white;
     padding: 1.8rem;
     border-radius: 8px;
-    /* SHADOW EFFECT: Added stronger shadow */
+    
     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
@@ -199,7 +199,7 @@ body {
     font-size: 0.95rem;
 }
 .data-table thead tr {
-    /* Table Header Background */
+    
     background-color: var(--table-head-bg);
 }
 .data-table th {
@@ -218,7 +218,7 @@ body {
     color: #444;
 }
 
-/* BOLD Batch Number */
+
 .data-table tbody tr td:first-child {
     font-weight: 500;
     color: var(--text-dark);
@@ -235,7 +235,7 @@ body {
     border-bottom: none;
 }
 
-/* Status Badges */
+
 .status-badge {
     padding: 0.35rem 0.9rem;
     border-radius: 50px;
@@ -247,7 +247,7 @@ body {
 .status-processing { background-color: var(--info-bg); color: var(--info-text); }
 .status-pending { background-color: var(--warning-bg); color: var(--warning-text); }
 
-/* Action Icons in Table */
+
 .table-actions {
     display: flex;
     gap: 12px;

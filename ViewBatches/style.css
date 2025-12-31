@@ -1,0 +1,76 @@
+
+:root {
+    --header-bg: #0e6b8a;
+    --main-bg: #f4f6f9;
+    --text-dark: #333;
+    --border-color: #e0e0e0;
+    --table-head-bg: #f8f9fa;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+}
+
+
+.main-header-strip { background-color: var(--header-bg); padding: 0.8rem 1.5rem; color: white; }
+.header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.header-left, .header-right { display: flex; align-items: center; gap: 15px; }
+.logo-img { height: 32px; }
+.logout-link { color: white; text-decoration: none; display: flex; align-items: center; gap: 5px; font-size: 0.9rem;}
+
+.main-content { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+.page-header-row { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.btn-back { background: white; border: 1px solid #ccc; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.btn-back:hover { background: #eee; }
+
+
+.table-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.data-table thead tr { background-color: var(--table-head-bg); }
+.data-table th { text-align: left; padding: 1.2rem 1rem; color: #666; font-weight: 700; border-bottom: 2px solid #eee; }
+.data-table td { padding: 1rem; border-bottom: 1px solid #eee; vertical-align: middle; }
+.data-table tbody tr:hover { background-color: #fcfcfc; }
+
+
+.status-badge { padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.status-completed { background-color: #d1e7dd; color: #0f5132; }
+.status-processing { background-color: #cfe2ff; color: #084298; }
+.status-pending { background-color: #fff3cd; color: #664d03; }
+
+
+.table-actions { display: flex; gap: 10px; }
+.action-icon { color: #999; cursor: pointer; transition: color 0.2s; }
+.action-icon:hover { color: #0e6b8a; }
+
+
+.pagination-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px;
+    border-top: 1px solid #eee;
+}
+
+.page-btn {
+    padding: 6px 14px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.page-btn:hover:not(:disabled) { background-color: #f0f0f0; }
+.page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+#pageIndicator { font-size: 0.9rem; font-weight: 500; color: #555; }
