@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Validation Rules
     const validators = {
         applicantName: (val) => val.trim() !== '',
         dob:           (val) => val.trim() !== '',
@@ -11,17 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
         maritalStatus: (val) => val !== ''
     };
 
-    
     const form = document.getElementById('detailsForm');
     const inputs = form.querySelectorAll('input, select');
 
+    // Add event listeners for real-time validation
     inputs.forEach(input => {
-    
+        // Validate on blur (when user leaves the field)
         input.addEventListener('blur', () => {
             validateField(input);
         });
 
-    
+        // Validate on input if the field already has an error
         input.addEventListener('input', () => {
             const formGroup = input.closest('.form-group');
             if (formGroup.classList.contains('error')) {
@@ -30,27 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-        const panInput = document.getElementById('panNumber');
+    // PAN Number Auto-Capitalize
+    const panInput = document.getElementById('panNumber');
     if (panInput) {
         panInput.addEventListener('input', function() {
             this.value = this.value.toUpperCase();
         });
     }
 
-        const phoneInput = document.getElementById('phone');
+    // Phone Number Limit to 10 digits
+    const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', function() {
             if (this.value.length > 10) this.value = this.value.slice(0, 10);
         });
     }
 
-        function validateField(input) {
+    // Helper function to validate a single field
+    function validateField(input) {
         const fieldId = input.id;
         const value = input.value;
         const rule = validators[fieldId];
         const formGroup = input.closest('.form-group');
 
-            if (!rule) return true;
+        if (!rule) return true; // No rule for this field
 
         const isValid = rule(value);
 
@@ -63,11 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-        window.validateAndProceed = function() {
+    // Global function attached to window for the button onclick
+    window.validateAndProceed = function() {
         let isFormValid = true;
         let firstErrorField = null;
 
-            for (const fieldId in validators) {
+        for (const fieldId in validators) {
             const input = document.getElementById(fieldId);
             if (input) {
                 const isValid = validateField(input);
@@ -80,9 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isFormValid) {
             console.log("Validation passed.");
-            alert("Success! Proceeding to Photo Capture...");
-            // window.location.href = 'application-photo.html';
+            // Redirect to the Photo page
+            window.location.href = '../Photo/index.html'; 
         } else {
+            // Scroll to the first error
             if (firstErrorField) {
                 firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 firstErrorField.focus();
