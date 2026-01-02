@@ -13,23 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const ratio = Math.max(window.devicePixelRatio || 1, 1);
         canvas.width = canvas.offsetWidth * ratio;
         canvas.height = canvas.offsetHeight * ratio;
-        ctx.scale(ratio, ratio);
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2 * ratio; 
     }
 
     window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    ctx.lineWidth = 2;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = '#000';
+    
+    // Initial resize to set correct resolution
+    setTimeout(resizeCanvas, 100);
 
     function getPos(e) {
         const rect = canvas.getBoundingClientRect();
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
         const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+
         return {
-            x: clientX - rect.left,
-            y: clientY - rect.top
+            x: (clientX - rect.left) * scaleX,
+            y: (clientY - rect.top) * scaleY
         };
     }
 
@@ -61,17 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.addEventListener('mouseup', stopDrawing);
     canvas.addEventListener('mouseout', stopDrawing);
 
-    canvas.addEventListener('touchstart', startDrawing);
-    canvas.addEventListener('touchmove', draw);
+    canvas.addEventListener('touchstart', startDrawing, { passive: false });
+    canvas.addEventListener('touchmove', draw, { passive: false });
     canvas.addEventListener('touchend', stopDrawing);
 
     clearBtn.addEventListener('click', () => {
-        ctx.clearRect(0, 0, canvas.width / (window.devicePixelRatio || 1), canvas.height / (window.devicePixelRatio || 1));
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         signatureDataUrl = null;
         nextBtn.disabled = true;
     });
 
     saveBtn.addEventListener('click', () => {
+        // Check if canvas is empty
+        const blank = document.createElement('canvas');
+        blank.width = canvas.width;
+        blank.height = canvas.height;
+        if (canvas.toDataURL() === blank.toDataURL()) {
+            alert("Please sign before saving.");
+            return;
+        }
+
         signatureDataUrl = canvas.toDataURL('image/png');
         showToast("Signature saved successfully");
         nextBtn.disabled = false;
@@ -80,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => {
         if (signatureDataUrl) {
             console.log("Proceeding with signature");
+            // window.location.href = 'application-review.html';
         }
     });
 
