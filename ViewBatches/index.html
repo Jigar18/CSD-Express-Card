@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Batches - Smart Card System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header-strip">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="../assets/images/logo.png" alt="PS QuickIT Logo" class="logo-img">
+                <div class="system-name">| Smart Card System</div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <div class="user-details">
+                        <span>Operator: Admin</span>
+                        <span class="user-unit">Unit: HQ Delhi</span>
+                    </div>
+                </div>
+                <a href="../Login-Page/index.html" class="logout-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <div class="page-header-row">
+            <button class="btn-back" onclick="window.location.href='../Dashboard/index.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back
+            </button>
+            <h1>View Batches</h1>
+        </div>
+
+        <div class="table-card">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Batch No.</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Cards</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+
+            <div class="pagination-container">
+                <button id="prevBtn" class="page-btn" disabled>Previous</button>
+                <span id="pageIndicator">Page 1 of 1</span>
+                <button id="nextBtn" class="page-btn">Next</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
